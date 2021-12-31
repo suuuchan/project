@@ -1,0 +1,15 @@
+<h2>ログイン</h2> 
+<div class="form">
+  <%= form_for(:session, url: login_path) do |f| %>
+    <%= f.label :メールアドレス %></br>
+    <%= f.text_field :mail %></br>
+    <%= f.label :パスワード %></br>
+    <%= f.password_field :password %></br></br>
+    <%= f.submit :"ログイン" %>
+  <% end %>    
+</div>
+    
+    
+    
+  
+</div>
