@@ -8,14 +8,20 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to root_path
+      redirect_to new_score_path
     else
       render :new
     end
+  end
+  
+  def index
+    @users = User.all
+    @score = Score.new
   end
   
   private
   def user_params
     params.require(:user).permit(:name, :mail, :password, :password_confirmation)
   end
+  
 end

@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="themr">
+    <h2>ランキング</h2>
+  </div> 
+    <table border="all">
+      <tr>
+        <th>ユーザーネーム</th>
+        <th>タイム</th>
+      </tr>
+      <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%#= user.score %></td>
+      </tr>
+      <% end %>  
+    </table>
+  <%= form_with model:@score, url:score_index_path, local:true do |f| %>
+  <table class="">
+            <tr>
+              <th>タイム</th>
+              <td><%= f.text_field :score, placeholder:"20:40" %></td>
+            </tr>
+  </table>
+  <% end %>
+ 
+  
+  
+</div>

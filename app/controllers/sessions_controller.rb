@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
   def create
     if @user.authenticate(session_params[:password])
       sign_in(@user)
-      redirect_to root_path
+      redirect_to new_score_path
     else
       flash.now[:danger] = t(".flash.invalid_password")
       render :new

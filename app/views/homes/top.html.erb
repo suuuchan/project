@@ -1,8 +1,50 @@
-<div class="main">
+<body>
+  <div class="main">
+    <div class="clock">
+      <p class="clock-date"></p>
+      <p class="clock-time"></p>
+    </div>
+  </div>
+  
+  <script>
+    const clock = () => {
+      // 現tiime取得するコード
+      const d = new Date();
+      let hour = d.getHours();
+      let min = d.getMinutes();
+      let sec = d.getSeconds();
+      min = min < 10 ? "0" + min : min;
+      sec = sec < 10 ? "0" + sec : sec;
+
+      let time = `${hour}:${min}:${sec}`;
+      
+      document.querySelector(".clock-time").innerText = time;
+    };
+    setInterval(clock, 1000);
+  </script>
+<div class="top">
   <h2>一秒を削り出せ</h2>
   <h3>
     〜ようこそ、掃除選手権へ〜</br>
-    ここは”お掃除の猛者”を決定する大会。</br>
-    我こそが！というチャレンジャーよ、共に戦おう。</br>
-    </h3>
+    ここはお掃除のタイムを競うアプリです。</br>
+    自己ベストを更新して、"掃除の猛者"を目指しましょう。</br>
+    今この瞬間もライバルはタイムを更新しているかも？！
+    早速始めてみましょう。</br>
+  </h3>
 </div>
+<div class="tag">
+  <%= link_to new_user_path do %>
+   <%= image_tag 'woman1.png',size: "300x200" %>
+  <% end %>
+  <%= link_to login_path do %>
+   <%= image_tag 'woman2.png',size: "300x200" %>
+  <% end %></br>
+  <div class="button1">
+    <%= link_to "新規挑戦者登録", new_user_path, class: "link" %>
+  </div>
+  
+  <%= link_to "既に登録済の方", login_path, class: "link" %>
+</div>
+</body>
+
+  
