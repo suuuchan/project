@@ -7,7 +7,7 @@
         <th>ユーザーネーム</th>
         <th>タイム</th>
       </tr>
-      <% Score.all.order(:score).each do |score| %>
+      <% @scores.each do |score| %>
       <tr>
         <td><%= score.user.name %></td>
         <td>

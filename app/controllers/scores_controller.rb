@@ -14,7 +14,7 @@ class ScoresController < ApplicationController
   end
   
    def index
-     @users = User.all
+     @scores=Score.all.order(:score).limit(2)
      
      
    end
