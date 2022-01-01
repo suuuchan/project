@@ -81,6 +81,7 @@
     <div class="form">
       <%= form_for (@score) do |f| %>
        <%= f.label :"スコア"%>
+       <%= f.hidden_field :score, id: "timer" %>
        <%= f.text_field :score, placeholder: "1539170" %>
        <%= f.submit "登録" %>
       <% end %> 

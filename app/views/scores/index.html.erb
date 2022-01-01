@@ -7,10 +7,14 @@
         <th>ユーザーネーム</th>
         <th>タイム</th>
       </tr>
-      <% @users.each do |user| %>
+      <% Score.all.order(:score).each do |score| %>
       <tr>
-        <td><%= user.name %></td>
-        <td><%= user.score %></td>
+        <td><%= score.user.name %></td>
+        <td>
+           <%= score.score %>
+        </td>
+        
+        
       </tr>
       <% end %>  
     </table>
