@@ -1,3 +1,22 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+  font-family: 'Mochiy Pop P One', sans-serif;
+}
+
+h2{
+  padding-top: 150px;
+}
+
+.show{
+  padding-top: 200px;
+}
+
+table{
+  border-top: 5px solid #afeeee;
+  border-bottom: 5px solid #afeeee;
+  border-left: 5px solid #afeeee;
+  border-right: 5px solid #afeeee;
+}

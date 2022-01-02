@@ -14,4 +14,41 @@
  *= require_self
  */
 
-@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
+
+header{
+  background-color: #fff6e6;
+  color: #666666;
+}
+
+body{
+  background-color: #fff6e6;
+  color: #666666;
+}
+
+.logo{
+  margin:10px 0 0 30px;
+  float:left;
+}
+
+.nav{
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+}
+
+li {
+  padding: 0 30px;
+  margin-top:30px;
+}
+
+.link{
+  text-decoration: none;
+  font-size: 20px;
+  color: #666666;
+}
+
+.title{
+  font-size: 20px;
+  color: #ffa74f;
+}

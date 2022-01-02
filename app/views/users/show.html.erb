@@ -1,0 +1,13 @@
+<body>
+  <div class="show">
+  <table>
+    <tr>
+      <th>じぶんのなまえ:</th>
+      <td><%= @user.name %></td>
+    </tr>
+    
+  </table>  
+  <p><%= link_to "じぶんのページ", user_path(@user.id), class: "link" %></p>
+    
+  </div>
+</body>

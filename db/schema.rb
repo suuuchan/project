@@ -10,22 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20220101075322) do
+ActiveRecord::Schema.define(version: 2022_01_02_101225) do
+
+  create_table "posts", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "title", limit: 10, null: false
+    t.string "text", limit: 50, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "scores", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "score",      null: false
+    t.integer "user_id"
+    t.integer "score", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",            limit: 10,  null: false
-    t.string   "mail",                        null: false
-    t.string   "password_digest", limit: 200, null: false
-    t.string   "remember_token",  limit: 200
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.string "name", limit: 10, null: false
+    t.string "mail", null: false
+    t.string "password_digest", limit: 200, null: false
+    t.string "remember_token", limit: 200
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
