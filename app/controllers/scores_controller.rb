@@ -14,8 +14,7 @@ class ScoresController < ApplicationController
   end
   
    def index
-     @scores=Score.all.order(:score).limit(2)
-     
+     @scores=Score.all.where(created_at: Time.current.all_day).order(:score).limit(5)
      
    end
    

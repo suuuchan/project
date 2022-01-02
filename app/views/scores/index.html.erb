@@ -1,14 +1,16 @@
 <div class="container">
   <div class="themr">
-    <h2>ランキング</h2>
+    <h2>週間ランキング</h2>
   </div> 
     <table border="all">
       <tr>
+        <th>順位</th>
         <th>ユーザーネーム</th>
         <th>タイム</th>
       </tr>
-      <% @scores.each do |score| %>
+      <% @scores.each.with_index(1) do |score, i| %>
       <tr>
+        <td>第<%= i %>位</td>
         <td><%= score.user.name %></td>
         <td>
            <%= score.score %>
