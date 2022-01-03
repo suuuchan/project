@@ -1,106 +1,70 @@
-<body>
-  <div class="message">
-    <h2>おてつだい、えらいね！</h2></br>
-    <h3>まいにちおてつだいすると、上手になれるよ。</br>
-    　　がんばろう♪</h3>
-  </div>
-  <div class="game">
-    <div id="timer">00:00:000</div>
-    <button id="start">はじめる</button>
-    <button id="stop">おわった</button>
-    <button id="reset">やりなおし</button>
-    <div class="form">
-      <%= form_for (@score) do |f| %>
-       <%= f.hidden_field :score, id: "score" %>
-       <%#= f.text_field :score, id:"score", placeholder: "1539170" %>
-       <div class="action">
+<div class="message">
+  <h2>おてつだい、えらいね！</h2></br>
+  <h3>まいにちおてつだいすると、上手になれるよ。</br>
+    　がんばろう♪</h3>
+</div>
+<div class="game">
+  <div id="timer">00:00:000</div>
+  <button id="start">はじめる</button>
+  <button id="stop">おわった</button>
+  <button id="reset">やりなおし</button>
+  <div class="form">
+    <%= form_for (@score) do |f| %>
+      <%= f.hidden_field :score, id: "score" %>
+      <div class="action">
         <%= f.submit "おわったら、ここをクリック！", class: "action" %> 
        </div>
-      <% end %>
-    </div>
-  </div>   
-  <script>
-      (function(){
-      'stop watch';
-
-       var timer = document.getElementById('timer');
-       var score = document.getElementById('score');
-       var start = document.getElementById('start');
-       var stop = document.getElementById('stop');
-       var reset = document.getElementById('reset');
+    <% end %>
+  </div>
+</div>   
+<script>
+  (function(){
+    'stop watch';
     
-       var startTime;
-    
-       var elapsedTime = 0;
+     var timer = document.getElementById('timer');
+     var score = document.getElementById('score');
+     var start = document.getElementById('start');
+     var stop = document.getElementById('stop');
+     var reset = document.getElementById('reset');
+     var startTime;
+     var elapsedTime = 0;
+     var timerId;
+     var timeToadd = 0;
 
-       var timerId;
-
-       var timeToadd = 0;
-
-       function updateTimetText(){
-
-         var m = Math.floor(elapsedTime / 60000);
-        
-         var s = Math.floor(elapsedTime % 60000 / 1000);
-
-         //135200ミリ 割る1000ミリ秒　→余り
-         var ms = elapsedTime % 1000;
-
-
-          m = ('0' + m).slice(-2); 
-          s = ('0' + s).slice(-2);
-          ms = ('0' + ms).slice(-3);
-
+     function updateTimetText(){
+       var m = Math.floor(elapsedTime / 60000);
+       var s = Math.floor(elapsedTime % 60000 / 1000);
+       var ms = elapsedTime % 1000;
+         m = ('0' + m).slice(-2); 
+         s = ('0' + s).slice(-2);
+         ms = ('0' + ms).slice(-3);
           //html表示ストップウォッチ部分スコアとして出す！！
-          timer.textContent = m + '分' + s + '秒' + ms;
+         timer.textContent = m + '分' + s + '秒' + ms;
       }
-
+      
       function countUp(){
-
-          timerId = setTimeout(function(){
-
-            elapsedTime = Date.now() - startTime + timeToadd;
-            updateTimetText()
-
-            countUp();
-
-        //1秒以下の秒表記する！
+        timerId = setTimeout(function(){
+        elapsedTime = Date.now() - startTime + timeToadd;
+        updateTimetText()
+        countUp();
         },10);
       }
 
       start.addEventListener('click',function(){
-
         startTime = Date.now();
-
         countUp();
       });
 
       stop.addEventListener('click',function(){
-
-         clearTimeout(timerId);
-
-         timeToadd += Date.now() - startTime;
-         score.value = elapsedTime
+        clearTimeout(timerId);
+        timeToadd += Date.now() - startTime;
+        score.value = elapsedTime
       });
       
-      //リセット
       reset.addEventListener('click',function(){
-      
         elapsedTime = 0;
-
         timeToadd = 0;
-
         updateTimetText();
-
       });
      })();
-    </script>
-    <div class="form">
-      <%#= form_for (@score) do |f| %>
-       <%#= f.label :"スコア"%>
-       <%#= f.hidden_field :score, id: "timer" %>
-       <%#= f.text_field :score, id:"score", placeholder: "1539170" %>
-       <%#= f.submit "登録" %>
-      <%# end %> 
-    </div>
-</body>
+</script>

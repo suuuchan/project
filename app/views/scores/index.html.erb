@@ -1,33 +1,19 @@
 <div class="container">
-  <div class="theme">
-    <h2>1週間のランキング</h2>
-  </div>   
-    <h3>1週間ではやくおさらあらいができたじゅんばんだよ！</br>
-        ランキングにのれたかな？</h3>
-    <table border="0">
-      <tr>
-        <th>じゅんばん</th>
-        <th>おなまえ</th>
-        <th>スコア</th>
-      </tr>
-      <% @scores.each.with_index(1) do |score, i| %>
-      <tr>
-        <td>第<%= i %>位</td>
-        <td><%= score.user.name %></td>
-        <td>
-           <%= score.score %>
-        </td>
-        
-        
-      </tr>
-      <% end %>  
-    </table>
-  <%#= form_with model:@score, url:score_index_path, local:true do |f| %>
-  <!--<table class="">-->
-  <!--          <tr>-->
-  <!--            <th>タイム</th>-->
-  <!--            <td><%#= f.text_field :score, placeholder:"20:40" %></td>-->
-  <!--          </tr>-->
-  <!--</table>-->
-  <%# end %>
+  <h2>1週間のランキング</h2>
+  <h3>1週間ではやくおさらあらいができたじゅんばんだよ！</br>
+      ランキングにのれたかな？</h3>
+  <table border="0">
+    <tr>
+      <th>じゅんばん</th>
+      <th>おなまえ</th>
+      <th>スコア</th>
+    </tr>
+    <% @scores.each.with_index(1) do |score, i| %>
+    <tr>
+      <td>第<%= i %>位</td>
+      <td><%= score.user.name %></td>
+      <td><%= score.score %></td>
+    </tr>
+    <% end %>  
+  </table>
 </div>

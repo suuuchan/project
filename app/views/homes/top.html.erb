@@ -5,25 +5,22 @@
       <p class="clock-time"></p>
     </div>
   </div>
-  
   <script>
     const clock = () => {
-      // 現tiime取得するコード
       const d = new Date();
       let hour = d.getHours();
       let min = d.getMinutes();
       let sec = d.getSeconds();
       min = min < 10 ? "0" + min : min;
       sec = sec < 10 ? "0" + sec : sec;
-
       let time = `${hour}時${min}分${sec}秒`;
-      
       document.querySelector(".clock-time").innerText = time;
     };
+    
     setInterval(clock, 1000);
   </script>
   <div class="top">
-    <h2>楽しくお皿あらいをしよう♪</h2>
+    <h2>楽しくおさらあらいをしよう♪</h2>
     <h3>
      みんながたべたおさらをきれいにすると</br>
      お母さんやお父さんは、とてもよろこんでくれるよ！</br>
@@ -31,11 +28,9 @@
      ルールはかんたんだよ！</br>
      ↑うえにかいてある”ゲーム”をクリックして、</br>
      おさらあらいにかかった時間をはかってみよう！</br>
-  </h3>
-</div>
-<div class="tag">
- <%= image_tag 'allstar.png',size: "400x300" %>
-</div> 
+    </h3>
+  </div>
+  <div class="tag">
+    <%= image_tag 'allstar.png',size: "400x300" %>
+  </div> 
 </body>
-
-  

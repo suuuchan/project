@@ -1,6 +1,10 @@
 class PostsController < ApplicationController
+  def new
+     @post = Post.new
+  end
+  
   def index
-    @posts = Post.all
+    @posts = Post.all.order(created_at: "DESC")
     @post = Post.new
   end
   
@@ -10,7 +14,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to posts_path
     else
-      render :index
+      render :new
     end
   end
   

@@ -25,11 +25,10 @@ class SessionsController < ApplicationController
     @user = User.find_by!(mail: session_params[:mail])
   rescue
     flash.now[:danger] = t(".flash.invalid_mail")
-    render action: "new"
+    render :new
   end
   
   def session_params
     params.require(:session).permit(:mail, :password)
   end
-
 end

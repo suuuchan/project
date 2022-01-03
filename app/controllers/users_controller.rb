@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :require_sign_in!#, only: [:new, :create]
+  skip_before_action :require_sign_in!
   before_action :authenticate_with_http_basic
   before_action :ensure_correct_user, only: [:show, :edit]
   
@@ -12,21 +12,14 @@ class UsersController < ApplicationController
     if @user.save
       sign_in @user
       redirect_to @user
-    # if @user.save
-    #   redirect_to root_path
     else
       render :new
     end
   end
   
-  def index
-    @users = User.all.order(:created_at)
-    @score = Score.new
-  end
-  
   def show
     @user=User.find(params[:id])
-    @posts=@user.posts
+    @posts=@user.posts.order(created_at: "DESC")
   end
   
   def edit
@@ -34,7 +27,7 @@ class UsersController < ApplicationController
   end
   
   def update
-     @user = User.find(params[:id])
+    @user = User.find(params[:id])
     if @user.update(user_params)
       redirect_to user_path(@user.id)
     else
@@ -43,21 +36,18 @@ class UsersController < ApplicationController
   end
   
   def ensure_correct_user
-    @user = User.find(params[:id])
-    unless @user.id == current_user.id
-      redirect_to user_path(current_user.id)
-    end
+     @user = User.find(params[:id])
+     unless @user.id == current_user.id
+       redirect_to user_path(current_user.id)
+     end
   end
   
   private
-  
   def set_user
     @user=User.find(params[:id])
   end
   
-  
   def user_params
     params.require(:user).permit(:name, :mail, :password, :password_confirmation)
   end
-  
 end

@@ -1,6 +1,5 @@
-<body>
-  <h2>ログインしよう！</h2> 
-  <div class="form">
+<h2>ログインしよう！</h2> 
+<div class="form">
   <%= error_messages(@user) %>
   <%= form_for(:session, url: login_path) do |f| %>
   <table>
@@ -16,7 +15,5 @@
   <div class="login">
     <%= f.submit :"ログインしよう！", class: "login" %>
   </div>
-    
   <% end %>    
  </div>
-</body>

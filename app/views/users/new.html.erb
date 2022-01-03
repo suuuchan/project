@@ -1,34 +1,28 @@
-<body>
-  <h2>とうろくしよう！</h2>
-  <h3>とうろくして、おさらあらいゲームをはじめよう♪</h3>
-  <div class="form">
-  
+<h2>とうろくしよう！</h2>
+<h3>とうろくして、おさらあらいゲームをはじめよう♪</h3>
+<div class="form">
   <%= error_messages(@user) %>
-  <%#= @user.errors.messages if @user.errors.present? %>
-    <%= form_for @user, url: users_path do |f| %>
-    <%#= form_error(@user) %>
-    <table>
-      <tr>
-        <th>おなまえ</th>
-        <td><%= f.text_field :name %></td>
-      </tr>
-      <tr>
-        <th>メールアドレス</th>
-        <td><%= f.text_field :mail %></td>
-      </tr>
-      <tr>
-        <th>パスワード</th>
-        <td><%= f.text_field :password %></td>
-      </tr>
-      <tr>
-        <th>もう一度バスワード入力しましょう</th>
-        <td><%= f.text_field :password_confirmation %></td></br>
-        <td><%= f.submit "登録" %></td>
-      </tr>
-      <tr>
-        <th></th>
-      </tr>
-    <% end %>
-    </table>
+  <%= form_with model:@user, url: users_path do |f| %>
+  <table>
+    <tr>
+      <th>おなまえ</th>
+      <td><%= f.text_field :name %></td>
+    </tr>
+    <tr>
+      <th>メールアドレス</th>
+      <td><%= f.text_field :mail %></td>
+    </tr>
+    <tr>
+      <th>パスワード</th>
+      <td><%= f.text_field :password %></td>
+    </tr>
+    <tr>
+      <th>もう一度バスワード入力しましょう</th>
+      <td><%= f.text_field :password_confirmation %></td></br>
+    </tr>
+  </table></br>
+  <div class="login">
+    <%= f.submit "とうろくする！", class:"login" %>
+  </div>
+  <% end %>
 </div>
-</body>
