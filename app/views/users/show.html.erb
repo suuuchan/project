@@ -1,13 +1,9 @@
 <body>
   <div class="show">
-  <table>
-    <tr>
-      <th>じぶんのなまえ:</th>
-      <td><%= @user.name %></td>
-    </tr>
-    
-  </table>  
-  <p><%= link_to "じぶんのページ", user_path(@user.id), class: "link" %></p>
+    <p class="name">おなまえ:<%= @user.name %></p>
+    <p class="name">今までのおさらあらい:<%= @user.scores.count %>回</p>
+  
+  <div alss="action"><%= link_to "お父さん・お母さんのページ", edit_user_path(@current_user), class: "action" %></div>
     
   </div>
 </body>

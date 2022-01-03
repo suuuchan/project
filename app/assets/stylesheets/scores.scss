@@ -1,3 +1,81 @@
 // Place all the styles related to the scores controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h2{
+  color: #ffd700;
+  text-align: center;
+  font-weight: bold; 
+  text-shadow: 1px 1px 0 #666,2px 2px 0 #666,3px 3px 0 #666;
+}
+
+h3{
+ text-align: center;
+}
+
+table{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+
+th{
+  font-size: 25px;
+  color: #ffa500;
+}
+
+td{
+  font-size: 20px;
+}
+
+.game{
+  // padding: 200px;
+  text-align: center;
+  font-size: 80px;
+  color: #ffa500;
+  text-shadow: 0 0 20px #ffea00;
+}
+
+button{
+  color: #666666;
+  background-color: #dfffbf;
+  border-bottom: 5px solid #d5ffbf;
+  width: 120px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+}
+
+button:hover{
+  margin-top: 3px;
+  color: #666666;
+  background: #bfffdf;
+  border-bottom: 2px solid #bff4ff;
+}
+
+.action{
+  color: #666666;
+  background-color: #ffeabf;
+  border-bottom: 5px solid #ffd5bf;
+  width: 400px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.action:hover{
+  margin-top: 3px;
+  color: #666666;
+  background: #ffcabf;
+  border-bottom: 2px solid #ffbfbf;
+}
+
+.name{
+  font-size: 30px;
+}
+

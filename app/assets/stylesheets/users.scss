@@ -12,11 +12,26 @@ h2{
 
 .show{
   padding-top: 200px;
+  color: #666666;
 }
 
-table{
-  border-top: 5px solid #afeeee;
-  border-bottom: 5px solid #afeeee;
-  border-left: 5px solid #afeeee;
-  border-right: 5px solid #afeeee;
+.action{
+  color: #666666;
+  background-color: #ffeabf;
+  border-bottom: 5px solid #ffd5bf;
+  width: 400px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-decoration: none;
+}
+
+.action:hover{
+  margin-top: 3px;
+  color: #666666;
+  background: #ffcabf;
+  border-bottom: 2px solid #ffbfbf;
 }
