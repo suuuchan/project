@@ -20,12 +20,13 @@ class UsersController < ApplicationController
   end
   
   def index
-    @users = User.all
+    @users = User.all.order(:created_at)
     @score = Score.new
   end
   
   def show
     @user=User.find(params[:id])
+    @posts=@user.posts
   end
   
   def edit

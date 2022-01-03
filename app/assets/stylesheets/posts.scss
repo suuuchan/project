@@ -1,3 +1,54 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+textarea {
+width: 300px;
+height: 10em;
+}
+
+.voice{
+  padding: 0.2em 0.5em;
+  margin: 2em 0;
+  color: #565656;
+  background: #ffeaea;
+  box-shadow: 0px 0px 0px 10px #ffeaea;
+  border: dashed 2px #ffc3c3;
+  border-radius: 8px;
+  outline: none;
+  width: 50%;
+  align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.index{
+  padding-top: 150px;
+  text-align: center;
+}
+
+.action{
+  color: #666666;
+  background-color: #ffeabf;
+  border-bottom: 5px solid #ffd5bf;
+  width: 400px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-decoration: none;
+}
+
+// .action:hover{
+//   margin-top: 3px;
+//   color: #666666;
+//   background: #ffcabf;
+//   border-bottom: 2px solid #ffbfbf;
+// }
+
+li{
+  list-style: none;
+}

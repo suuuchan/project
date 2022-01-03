@@ -8,21 +8,22 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <header>
+  <div class="allheader">
     <div class="logo">
       <% if signed_in? %>
       <p class="title">ぼくをクリックしてルールをみてみよう</p>
-      <%= link_to "/" do %>
-        <%= image_tag 'boy.png',size: "200x150" %>
-      <% end %>  
+        <%= link_to "/" do %>
+          <%= image_tag 'boy.png',size: "200x150" %>
+        <% end %>  
       <% else %>
         <p class="title">ワクワク！おさらあらいゲーム</p>
         <%= image_tag 'boy.png',size: "200x150" %>
       <% end %>
      </div>      
       <ul class="nav">
-        <li></li>
         <% if signed_in? %>
         <li><%= link_to "ゲーム", new_score_path, class: "link" %></li>
+        <li><%= link_to "今週のランキング", scores_path, class: "link" %></li>
         <li><%= link_to "じぶんのページ", user_path(@current_user), class: "link" %></li>
         <li><%= link_to "みんなのページ", posts_path, class: "link" %></li>
         <li><%= link_to "ログアウト",logout_path, method: :delete, class: "link" %></li>
@@ -31,7 +32,7 @@
         <li><%= link_to "もうやったことあるみんな!", login_path, class: "link" %></li>
         <% end %>
       </ul>
-      
+   </div>     
   </header>
   <body>
     <%= yield %>

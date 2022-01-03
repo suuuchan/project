@@ -10,9 +10,27 @@ h2{
   padding-top: 150px;
 }
 
-.show{
+
+.mypage{
   padding-top: 200px;
   color: #666666;
+  text-align: center;
+}
+
+.show{
+  padding-bottom: 20px;
+}
+
+.profile{
+  padding: 0.2em 0.5em;
+  // margin: 2em 0;
+  background: #d6ebff;
+  box-shadow: 0px 0px 0px 10px #d6ebff;
+  border: dashed 2px white;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  
 }
 
 .action{
@@ -30,6 +48,35 @@ h2{
 }
 
 .action:hover{
+  margin-top: 3px;
+  color: #666666;
+  background: #ffcabf;
+  border-bottom: 2px solid #ffbfbf;
+}
+
+.parents{
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+.edit{
+  padding-top: 150px;
+  text-align: center;
+}
+
+.login{
+  color: #666666;
+  background-color: #ffeabf;
+  border-bottom: 5px solid #ffd5bf;
+  width: 200px;
+  outline: none;
+  font-size: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+}
+
+.login:hover{
   margin-top: 3px;
   color: #666666;
   background: #ffcabf;

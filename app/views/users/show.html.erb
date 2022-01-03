@@ -1,9 +1,41 @@
 <body>
+  <div class="all">
+<div class="mypage">
   <div class="show">
-    <p class="name">おなまえ:<%= @user.name %></p>
-    <p class="name">今までのおさらあらい:<%= @user.scores.count %>回</p>
-  
-  <div alss="action"><%= link_to "お父さん・お母さんのページ", edit_user_path(@current_user), class: "action" %></div>
-    
+    <ul class="profile">
+      <li><h3>おなまえ:<%= @user.name %></h3></li>
+      <li><h3>今までのおさらあらい:<%= @user.scores.count %>回</h3></li>
+    </ul>
   </div>
+   <div alss="action">
+     <%= link_to "お父さん・お母さんのページ", edit_user_path(@current_user), class: "action" %>
+     <%= link_to "かんそうをかく", posts_path, class: "action" %>
+   </div>
+   <div class="parents">
+     <%= link_to edit_user_path(@current_user) do %>
+     <%= image_tag 'parents.png',size: "200x150" %>
+     <% end %>
+     <%= link_to posts_path do %>
+     <%= image_tag 'smile.png',size: "200x150" %>
+     <% end %>
+   </div>
+</div>
+<div class="myreview">
+  <div class="post">
+    <h3>今までかいたかんそう</h3>
+  <% @posts.each do |post| %>
+
+  
+ 
+    <ul class="voice">
+      <li><%= post.created_at.strftime("%Y年%m月%d日") %></li>
+      <li>タイトル:  <%= post.title %></li>
+      <li>かんそう：</br><%= post.text %></li>
+    </ul>
+  
+
+ <% end %>
+</div>
+</div>
+</div>
 </body>

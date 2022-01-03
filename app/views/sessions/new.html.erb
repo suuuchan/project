@@ -1,11 +1,22 @@
-<h2>ログインしよう！</h2> 
-<div class="form">
+<body>
+  <h2>ログインしよう！</h2> 
+  <div class="form">
+  <%= error_messages(@user) %>
   <%= form_for(:session, url: login_path) do |f| %>
-    <%= f.label :メールアドレス %></br>
-    <%= f.text_field :mail %></br>
-    <%= f.label :パスワード %></br>
-    <%= f.password_field :password %></br></br>
-    <%= f.submit :"ログインしよう！" %>
+  <table>
+    <tr>
+      <th>メールアドレス</th>
+      <td><%= f.text_field :mail %></td>
+    </tr>
+    <tr>
+      <th>パスワード</th>
+      <td><%= f.password_field :password %></td>
+    </tr>
+  </table></br>
+  <div class="login">
+    <%= f.submit :"ログインしよう！", class: "login" %>
+  </div>
+    
   <% end %>    
-</div>
-</div>
+ </div>
+</body>

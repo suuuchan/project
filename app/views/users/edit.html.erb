@@ -1,11 +1,16 @@
 <div class="edit">
+  <h3>登録情報編集画面</h3>
   <%= form_with model:@user, url:user_path(@user.id), local:true do |f| %>
-  <%= f.label :おなまえ %>
-  <%= f.text_field :name %>
-  <%= f.label :メールアドレス %>
-  <%= f.text_field :mail %>
-  <%= f.label :パスワード %>
-  <%= f.text_field :password %>
-  <%= f.submit "変更" %>
+  <%= f.label :おなまえ %></br>
+  <%= f.text_field :name %></br>
+  <%= f.label :メールアドレス %></br>
+  <%= f.text_field :mail %></br>
+  <%= f.label :パスワード %></br>
+  <%= f.text_field :password %></br></br>
+  <div class="login">
+  <%= f.submit "変更", class: "login" %></br>
+  </div>
+  
   <% end %>
+  
 </div>
