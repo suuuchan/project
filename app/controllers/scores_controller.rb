@@ -14,7 +14,7 @@ class ScoresController < ApplicationController
   end
   
    def index
-     @scores=Score.all.where(created_at: Time.current.all_day).order(:score).limit(5)
+     @scores=Score.all.where(created_at: Time.current.all_week).order(:score).limit(5)
    end
    
    private
