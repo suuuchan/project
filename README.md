@@ -1,24 +1,27 @@
-# README
+# ♪たのしいおさらあらい♪
+<img width="1386" alt="main" src="https://user-images.githubusercontent.com/88092281/147996975-6e38428e-327b-43ef-8b21-085353a18969.png">
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## アプリケーション概要
+お子様が楽しくお皿洗いのお手伝いができるアプリケーションです。
 
-Things you may want to cover:
+### このプリケーションでできること
+・お皿洗いにかかった時間で対戦することができるゲーム。  
+・お手伝いに対する感想を投稿することができます。
 
-* Ruby version
+### ターゲットユーザ
 
-* System dependencies
+楽しみながら家事のお手伝いをしたいお子様
 
-* Configuration
+### 主な利用シーン
 
-* Database creation
+日々の食後の洗い物時
 
-* Database initialization
+## 開発環境
 
-* How to run the test suite
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- IDE：Cloud9
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 使用素材
+- [x] 写真AC: <https://www.photo-ac.com/>
